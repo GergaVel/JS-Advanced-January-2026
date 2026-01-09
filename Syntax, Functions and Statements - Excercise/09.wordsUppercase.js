@@ -44,3 +44,16 @@ function words(text) {
 }
 
 words('Hi, how are you?'); 
+
+// version on 1 row
+
+function words (text) {
+    console.log(
+        text.split(/[\W]+/)
+        .filter(x => x !== "")
+        .join(", ")
+        .toUpperCase()
+    );
+}
+
+words('Hi, how are you?'); 
