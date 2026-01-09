@@ -69,7 +69,7 @@ function roadRadar(speed, area) {
     // let cityLimit = 50;
     // let residentialLymit = 20;
 
-    const speedLimit = {
+    const speedLimit = { 
         "motorway" : 130,
         "interstate" : 90,
         "city" : 50,
@@ -103,3 +103,10 @@ roadRadar(120, 'interstate');
 roadRadar(200, 'motorway');
 
 
+
+// const data = { ... };
+
+// function main(input) {
+//     let value = data[input.key];
+//     let result = helper(value);
+// }
