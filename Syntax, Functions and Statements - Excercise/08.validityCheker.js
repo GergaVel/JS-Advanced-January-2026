@@ -22,7 +22,7 @@ function validityChecker(...data){
         console.log(`{${x1}, ${y1}} to {${x2}, ${y2}} is invalid`);  
     }
 
-    function checkDistance( x1, y1, x1, y2){
+    function checkDistance( x1, y1, x2, y2){
         let distanceX = x1 - x2;
         let distanceY = y1 - y2;
 
