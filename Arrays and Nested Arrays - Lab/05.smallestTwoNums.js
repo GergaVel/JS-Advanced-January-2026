@@ -10,7 +10,7 @@ function twoSmallestNumbers(arr) {
     let min1 = Infinity;
     let min2 = Infinity;
 
-    for (let num of arr) {
+    for (let num of arr) {   
         if (num < min1) {
             min2 = min1;
             min1 = num;
