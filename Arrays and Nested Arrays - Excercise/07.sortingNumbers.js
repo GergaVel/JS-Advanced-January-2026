@@ -13,21 +13,22 @@ function solve(arr) {
 
 solve([1, 65, 3, 52, 48, 63, 31, -3, 18, 56]);
 
-//second version
+//second version - non of the arrays have been changed
 function solve(arr) {
    let res = [];
    arr.sort((a, b) => a - b);
 
-    while (arr.length){
-        res.push(arr.shift());
-        res.push(arr.pop());
+   for (let i = 0; i < arr.length / 2; i++)  {
+    let lastIndex = arr.length - 1 - i;
+
+    res.push(arr[i]);
+    if (i === lastIndex){
+        break; 
     }
-    return res.filter((x) => {
-        if (x || x === 0) {
-            return true
-        }
-        return false;
-    })   
+    res.push(arr[lastIndex]);
+   }    
+
+   return res
 }
 
 solve([1, 65, 3, 52, 48, 63, 31, -3, 18, 56]);
