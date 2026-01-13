@@ -13,13 +13,16 @@ function solve (commands){
         }         
     }
 
-   if (result.length === 0) {
-        console.log('Empty');
-   } else {      
-        for (el of result){
-        console.log(el);    
-        }
-    }
+//    if (result.length === 0) {
+//         console.log('Empty');
+//    } else {      
+//         for (el of result){
+//         console.log(el);    
+//         }
+//     }
+
+result.length > 0 ? console.log(result.join('\n')) : console.log('Empty');
+
 }
 
 solve(['add', 'add', 'add', 'add']);
