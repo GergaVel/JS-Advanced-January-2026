@@ -12,3 +12,17 @@ function solve(arr) {
 }
 
 solve([1, 3, 8, 4, 10, 12, 3, 2, 24]); 
+
+// solution with .reduce()
+
+function solve(arr) {
+    return arr.reduce((acc, el) => {
+        if (acc.length === 0) {
+            acc.push(el);
+        } else if (el >= acc[acc.length - 1]){
+            acc.push(el);
+        } 
+        return acc
+        
+    }, []); //it's important to return some result --> the acc otherwise it wouldn't work
+}
