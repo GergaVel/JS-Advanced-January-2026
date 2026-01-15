@@ -1,12 +1,12 @@
-function solve(arr){
-    arr.sort((a,b) => {
-        if (a.length !== b.lenght){
-            return a.lenght - b.lenght;
+function solve(arr) {
+    arr.sort((a, b) => {
+        if (a.length !== b.length) {
+            return a.length - b.length;
         }
         return a.localeCompare(b);
-    })
-    console.log(arr.join('\n'));    
+    });
+
+    console.log(arr.join('\n'));
 }
 
-
-solve(['alpha','beta','gamma']);
+solve(['alpha', 'beta', 'gamma']);
