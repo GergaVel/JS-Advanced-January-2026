@@ -1,14 +1,19 @@
 function solve(data) {
     for (let i = 0; i < data.length - 1; i++){
-        let sumRowOne = 0;
-        let sumRowTwo = 0;
-        let sumColOne = 0;
-        let sumColTwo = 0;
+        // let sumRowOne = 0;
+        // let sumRowTwo = 0;
+        // let sumColOne = 0;
+        // let sumColTwo = 0;
 
-        data[i].forEach(x => sumRowOne += x); //horizontal row 1
-        data[i + 1].forEach(x => sumRowTwo += x); // horizontal row 2
-        data.forEach(row => sumColOne += row[i]); // vertical col 1
-        data.forEach(row => sumColTwo += row[i + 1]); // vertical col 2
+        // data[i].forEach(x => sumRowOne += x); //horizontal row 1
+        // data[i + 1].forEach(x => sumRowTwo += x); // horizontal row 2
+        // data.forEach(row => sumColOne += row[i]); // vertical col 1
+        // data.forEach(row => sumColTwo += row[i + 1]); // vertical col 2
+
+        let sumRowOne = data[i].reduce((acc, el) => acc += el, 0);
+        let sumRowTwo = data[i + 1].reduce((acc, el) => acc += el, 0);
+        let sumColOne = data.reduce((acc,el) => acc += el[i], 0);
+        let sumColTwo = data.reduce((acc,el) => acc += el[i + 1], 0);
 
         if (sumRowOne !== sumRowTwo || sumColOne !== sumColTwo){
             return false
