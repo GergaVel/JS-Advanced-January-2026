@@ -24,6 +24,36 @@ function storeCatalog(data) {
     //whenever we talk abt sorting an obj, we have to always go to another data structure --> arr
 }
 
+
+
+// another version
+
+function storeCatalog(data) {
+    const store = {};
+
+    for (let el of data){
+        let [name, price] = el.split(' : ');
+        price = Number(price);
+        let groupChar = name[0];
+
+        if (!store.hasOwnProperty(groupChar)){
+            store[groupChar] = [];
+        }
+
+        store[groupChar].push({name, price});
+    }
+    
+    const keys = Object.keys(store).sort((a, b) => a.localeCompare(b));
+
+    for (let groupChar of keys){
+        console.log(groupChar);
+        store[groupChar]
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .forEach(el => console.log(`  ${el.name}: ${el.price}`));      
+    }
+}
+
+
 storeCatalog([
     'Appricot : 20.4',
     'Fridge : 1500',
@@ -35,4 +65,3 @@ storeCatalog([
     'T-Shirt : 10'
 ]);
 
-// another version
