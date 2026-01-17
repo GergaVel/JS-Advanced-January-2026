@@ -1,3 +1,4 @@
+//longer version
 function carFactory(order) {
     let car = {
         model: undefined, //bc it will be a string
@@ -49,8 +50,8 @@ carFactory({
 
 function carFactory(order) {
     let car = {
-        model: undefined, //bc it will be a string
-        engine: null, //bc it will be another obj
+        model: undefined, 
+        engine: null, 
         carriage: null,
         wheels: null
     };
