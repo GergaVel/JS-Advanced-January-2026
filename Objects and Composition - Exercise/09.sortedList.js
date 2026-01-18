@@ -12,7 +12,7 @@ function sortedList() {
             this._list.sort(this._mySort);
         },
         remove: function(index){
-            if (index < 0 || index >= this._list.lenght){
+            if (index < 0 || index >= this._list.length){
                 return;
             }
             this._list.splice(index, 1);
@@ -20,7 +20,7 @@ function sortedList() {
             this._list.sort(this._mySort);
         },
         get: function(index){
-            if (index < 0 || index >= this._list.lenght){
+            if (index < 0 || index >= this._list.length){
                 return;
             }
             return this._list[index];
