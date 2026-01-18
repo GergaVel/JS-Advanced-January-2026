@@ -48,7 +48,7 @@ function storeCatalog(data) {
     for (let groupChar of keys){
         console.log(groupChar);
         store[groupChar]
-            .sort((a, b) => a.name.localeCompare(b.name))
+            .sort((objA, objB) => objA.name.localeCompare(objB.name))
             .forEach(el => console.log(`  ${el.name}: ${el.price}`));      
     }
 }
