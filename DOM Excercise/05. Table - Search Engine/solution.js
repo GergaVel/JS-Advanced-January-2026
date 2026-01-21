@@ -21,15 +21,16 @@ const tableRowRef = document.querySelectorAll('tbody tr');
 
    for (let i = 0; i < tableRowRef.length; i++){
       const tdRef = tableRowRef[i].querySelectorAll('td'); 
-         for (let col = 0; cal < tdRef.length; col++);
+         for (let col = 0; col < tdRef.length; col++){
             const tdText = tdRef[col].textContent; //returns name, email, course under one another 3 rows groups
             
             if (tdText.includes(searchText)){ //inclides is case sensitive
-               tableRowRef[i].classList.add('selected'); //to match (yellow)
+               tableRowRef[i].classList.add('select'); //to match (yellow)
                break;
             } else {
                tableRowRef[i].classList.remove('select');
             }
          }
    }
+}
 }
