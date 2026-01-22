@@ -29,11 +29,19 @@ function solve() {
          result[name].bestSalary = salaryData.bestSalary;
       }      
 
-      const bestRestaurant = findBestRestaurant(result)
+      const [name, restaurantInfo] = findBestRestaurant(result)
+      bestRestaurantRef.textContent = `Name: ${name} Average Salary: ${restaurantInfo.avgSalary.toFixed(2)} Best Salary: ${restaurantInfo.bestSalary.toFixed(2)}`;
+      
+      let buff = '';
+
+      for (let el of restaurantInfo.workers){
+         restaurantInfo.workers.sort((a, b) => b.salary - a.salary).forEach(worker => buff += `Name: ${worker.name} With Salary: ${worker.salary}`);
+         bestWorkersRef.textContent = buff.trim();
+      }
    }
 
    function findBestRestaurant(restaurants){
-      
+      return Object.entries(restaurants).sort((a, b) => b[1].avgSalary - a[1].avgSalary)[0];
    }
 
    function calculateRestaurantData(workers) {
