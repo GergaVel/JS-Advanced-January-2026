@@ -31,7 +31,7 @@ let li = document.createElement('li'); //creates a list
 // -- with p.textContent = 'New paragraph'; we add text to it. HOW COOL!!
 
 //clone/copy elements
-let li = document.getElementById('my-list');
+let lis = document.getElementById('my-list'); //ignore the s!
 let newLi = li.cloneNode(true); // true kopira tsialata erarhia, false samo elements
 // -- elements are created in the memory - they don;t exist on the page. To see it on the page, we need to append it to the DOM tree
 
