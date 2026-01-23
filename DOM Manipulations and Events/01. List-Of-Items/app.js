@@ -1,6 +1,6 @@
 function addItem() {
     // read input field
-    const input = document.getElementById('newItemText');
+    const input = document.getElementById('newItemText'); //we have the id:  <input type="text" id="newItemText" />
 
     //if no content -> do nothing
     if (!input.value){
