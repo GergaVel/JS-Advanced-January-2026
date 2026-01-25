@@ -13,16 +13,38 @@ function solve() {
       const tr = createTableRow(el);
       tableRef.appendChild(tr);
     }
+
+    input.value = '';
+
   }
 
   function onGenerateOrder() {
     const selectItem = document.querySelectorAll('input[type="checkbox"]:checked'); 
+    let names = [];
+    let sum = 0;
+    let decFactorSum = 0;
 
     for (const item of selectItem) {
       const tr = item.parentElement.parentElement;
+      // tr.queryselectorAll(p) OR
       const [imgTd, nameTd, priceTd, decFactorTd] = tr.children;
+      const name = nameTd.children[0].textContent;
+      let price = priceTd.children[0].textContent;
+      let decFactor = decFactorTd.children[0].textContent;
+
+      price = Number(price);
+      decFactor = Number(decFactor);
+
+      names.push(name);
+      sum += price;
+      decFactorSum += decFactor;
     }
 
+    let buff = `Bought furniture: ${names.join(', ')}\n`;
+    buff += `Total price: ${sum.toFixed(2)}\n`;
+    buff += `Average decoration factor: ${decFactorSum / names.length}`
+
+    output.value = buff;
   }
 
   function createTableRow(el){
@@ -49,7 +71,7 @@ function solve() {
 
     const decFactorTd = document.createElement('td'); 
     const decFactorP = document.createElement('p');
-    decFactorP.textContent = el.deFactor;
+    decFactorP.textContent = el.decFactor;
     
     tr.appendChild(decFactorTd);
     decFactorTd.appendChild(decFactorP);
