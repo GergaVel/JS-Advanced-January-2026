@@ -12,8 +12,9 @@ function argumentInfro(...args) {
     }
     
     Object.entries(result)
-    .sort(([keyA, valueA], [keyB, valueB]) => valueB - valueA)
+    .sort(([keyA, valueA], [keyB, valueB]) => valueB - valueA) //a[1], b[1]
     .forEach(([type, count]) => console.log(`${type} = ${count}`));
+
 }
 
 argumentInfro('cat', 42, function () { console.log('Hello world!');});
